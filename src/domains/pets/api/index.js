@@ -7,23 +7,20 @@ const Router = express.Router()
 // const { errorsMap, USER_COOKIE_NAME } = require('../../config')
 
 // Models
-const Pets = require('../model')
+const Pet = require('../model')
 
 // MiddlewaresTokenExpiredError
 // const authorization = require('../../middlewares/authorization')
 
+Router.get('/', async (_, res) => {
+  try {
 
-Router.get('/', async (req, res) => {
-  res.status(200).send([{
-    id: "4dfs3242",
-    name: "Cute Dog",
-    description: "A cute dog"
-  },
-  {
-    id: "gf435",
-    name: "Cute Cat",
-    description: "A cute cat"
-  }])
+    const allPets = await Pet.find()
+
+    res.status(200).send(allPets)
+  }catch(error) {
+    res.status(500).send(error)
+  }
 })
 
 Router.post('/', async (req, res) => {

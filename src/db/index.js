@@ -13,7 +13,7 @@ module.exports = () => {
       console.log('Connected to a mongo DB')
     })
     .catch(error => {
-      console.error("bad connection")
+      console.error("bad connection", error)
       new Error({ type: 'Mongo connection error', message: error })
     })
 }

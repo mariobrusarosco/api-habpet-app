@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
-const petsSchema = require('./schema')
+const petSchema = require('./schema')
 
-const Pets = mongoose.model('Pets', petsSchema)
+const Pet = mongoose.model('Pet', petSchema)
 
-module.exports = Pets
+module.exports = Pet

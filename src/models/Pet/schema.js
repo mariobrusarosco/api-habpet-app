@@ -1,7 +1,9 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-const petSchema = new mongoose.Schema({
-  // id: String,
+
+const PetSchema = new Schema({
+  id: String,
   pictureMoods: {
    level0 : String,
    level1 : String,
@@ -12,4 +14,4 @@ const petSchema = new mongoose.Schema({
   }
 })
 
-module.exports = petSchema
+module.exports = PetSchema
